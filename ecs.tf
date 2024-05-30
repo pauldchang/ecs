@@ -184,16 +184,21 @@ resource "aws_ecs_service" "wordpress_service" {
 
 # Var
 variable "vpc_id" {
-  description = "The VPC ID where resources will be created"
+  description = "ami-0ddda618e961f2270"
 }
 
 variable "subnet_ids" {
   description = "A list of subnet IDs for ECS service"
   type        = list(string)
+  default     = [
+    "subnet-0e9f14c67522c0055",
+    "subnet-09d335e7f5d5b6d21",
+    "subnet-0b85707b1f095ffb9"
+  ]
 }
 
 variable "db_password" {
-  description = "Password for the RDS instance"
+  description = "password"
   type        = string
   sensitive   = true
 }
